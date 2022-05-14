@@ -43,5 +43,17 @@ namespace EffectivePotato.WinUI {
                 this["UserName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("42, 69")]
+        public global::System.Drawing.Point UserAge {
+            get {
+                return ((global::System.Drawing.Point)(this["UserAge"]));
+            }
+            set {
+                this["UserAge"] = value;
+            }
+        }
     }
 }

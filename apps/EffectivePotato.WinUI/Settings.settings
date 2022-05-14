@@ -11,5 +11,8 @@
     <Setting Name="UserAge" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">42, 69</Value>
     </Setting>
+    <Setting Name="boobs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">adsf</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

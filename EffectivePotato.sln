@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Sln Items", "_Sln Items", 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		test-actor.json = test-actor.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EffectivePotato.Core", "apps\EffectivePotato.Core\EffectivePotato.Core.csproj", "{A3F95A95-44DF-43CF-9909-CDDE84C21659}"

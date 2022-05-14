@@ -1,5 +1,8 @@
 ﻿
+using System.Text;
 using System.Text.Json;
+using System.Xml;
+using System.Xml.Serialization;
 using EffectivePotato.WinUI.Forms;
 
 namespace EffectivePotato.WinUI;
@@ -18,13 +21,6 @@ internal static class Program
 
       var host = CreateHostBuilder().Build();
       ServiceProvider = host.Services;
-
-
-      var set = new FormSettings();
-      //var js = new JsonSerializerOptions();
-      var json = JsonSerializer.Serialize(set);
-
-
 
       //Application.Run(ServiceProvider.GetRequiredService<MainForm>());
       Application.Run(ServiceProvider.GetRequiredService<ActorTestForm>());

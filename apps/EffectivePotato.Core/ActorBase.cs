@@ -4,6 +4,20 @@ namespace EffectivePotato.Core;
 
 public abstract class ActorBase
 {
+   public int[] BaseAbilityScores { get; set; }
+
+   protected ActorBase()
+   {
+      if (BaseAbilityScores is null)
+      {
+         BaseAbilityScores = new int[Enum.GetNames<AbilityScoreType>().Length];
+
+         foreach (var score in Enum.GetValues<AbilityScoreType>())
+         {
+            BaseAbilityScores[(int)score] = 10;
+         }
+      }
+   }
 
 }
 
@@ -46,14 +60,15 @@ public enum AbilityScoreType
    Constitution,
 }
 
-public class AbilityScore
-{
-   public int BaseScore { get; set; }
-   public int Modifier => BaseScore.GetAbilityModifier();
-   public int Score => BaseScore;
-}
 
-public class AbilityScores
-{
-   public AbilityScore Strength { get; set; }
-}
+//public class AbilityScore
+//{
+//   public int BaseScore { get; set; }
+//   public int Modifier => BaseScore.GetAbilityModifier();
+//   public int Score => BaseScore;
+//}
+
+//public class AbilityScores
+//{
+//   public AbilityScore Strength { get; set; }
+//}
