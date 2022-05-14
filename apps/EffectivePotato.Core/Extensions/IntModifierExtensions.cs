@@ -2,36 +2,30 @@
 
 public static class IntModifierExtensions
 {
-   public static int GetModifier(this int score)
-   {
-      if (score <= 1)
-         return -5;
-      if (score <= 3)
-         return -4;
-      if (score <= 5)
-         return -3;
+   public static int GetAbilityModifier(this int score) =>
+      score switch
+      {
+         <= 1 => -5,
+         <= 3 => -4,
+         <= 5 => -3,
+         <= 7 => -2,
+         <= 9 => -1,
+         <= 11 => 0,
+         <= 13 => 1,
+         <= 15 => 2,
+         <= 17 => 3,
+         <= 19 => 4,
+         _ => 5
+      };
 
-      if (score <= 7)
-         return -2;
+   public static int GetProficiencyModifier(this int score) =>
+      score switch
+      {
+         <= 4 => 2,
+         <= 8 => 3,
+         <= 12 => 4,
+         <= 16 => 5,
+         _ => 6
+      };
 
-      if (score <= 9)
-         return -1;
-
-      if (score <= 11)
-         return 0;
-
-      if (score <= 13)
-         return 1;
-
-      if (score <= 15)
-         return 2;
-
-      if (score <= 17)
-         return 3;
-
-      if (score <= 19)
-         return 4;
-
-      return 5;
-   }
 }

@@ -1,4 +1,7 @@
 ﻿
+using System.Text.Json;
+using EffectivePotato.WinUI.Forms;
+
 namespace EffectivePotato.WinUI;
 
 internal static class Program
@@ -16,7 +19,15 @@ internal static class Program
       var host = CreateHostBuilder().Build();
       ServiceProvider = host.Services;
 
-      Application.Run(ServiceProvider.GetRequiredService<MainForm>());
+
+      var set = new FormSettings();
+      //var js = new JsonSerializerOptions();
+      var json = JsonSerializer.Serialize(set);
+
+
+
+      //Application.Run(ServiceProvider.GetRequiredService<MainForm>());
+      Application.Run(ServiceProvider.GetRequiredService<ActorTestForm>());
    }
 
    public static IServiceProvider? ServiceProvider { get; private set; }
@@ -30,11 +41,14 @@ internal static class Program
       return Host.CreateDefaultBuilder()
          .ConfigureServices((context, services) =>
          {
-            services.AddMediatR(assemblies.ToArray());
             //services.AddHttpClient<IStarClusterService, StarClusterService>(client => client.BaseAddress = new Uri("https://localhost:7013/"));
             //services.AddTransient<IStarClusterApi, StarClusterApi>();
             //services.AddTransient<IAppSettings, AppSettings>();
-            services.AddTransient<MainForm>();
+
+            services
+               .AddMediatR(assemblies.ToArray())
+               .AddTransient<ActorTestForm>()
+               .AddTransient<MainForm>();
          });
    }
 }

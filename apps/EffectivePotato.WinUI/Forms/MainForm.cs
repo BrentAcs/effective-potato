@@ -1,4 +1,4 @@
-﻿namespace EffectivePotato.WinUI;
+﻿namespace EffectivePotato.WinUI.Forms;
 
 public partial class MainForm : Form
 {

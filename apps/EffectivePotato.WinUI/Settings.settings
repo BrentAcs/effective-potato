@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EffectivePotato.WinUI" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AppTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Effective Potato</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A-User</Value>
+    </Setting>
+    <Setting Name="UserAge" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">42, 69</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
