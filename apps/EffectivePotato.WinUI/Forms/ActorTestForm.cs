@@ -28,6 +28,7 @@ public partial class ActorTestForm : Form
       }
 
       _testActor ??= new TestActor();
+      abilityScoresPanel.Actor = _testActor;
    }
 
    private void ActorTestForm_FormClosed(object sender, FormClosedEventArgs e)

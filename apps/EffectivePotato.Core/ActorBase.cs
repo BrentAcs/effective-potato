@@ -18,7 +18,12 @@ public abstract class ActorBase
          }
       }
    }
+}
 
+public static class ActorBaseExtensions
+{
+   public static int GetBaseAbilityScore(this ActorBase actor, AbilityScoreType scoreType) => 
+      actor.BaseAbilityScores[(int) scoreType];
 }
 
 public class TestActor : ActorBase
