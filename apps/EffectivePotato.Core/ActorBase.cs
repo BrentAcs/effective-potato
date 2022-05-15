@@ -4,6 +4,7 @@ namespace EffectivePotato.Core;
 
 public abstract class ActorBase
 {
+   public int Level { get; set; } = 1;
    public int[] BaseAbilityScores { get; set; }
 
    protected ActorBase()
@@ -20,10 +21,24 @@ public abstract class ActorBase
    }
 }
 
+public static class ActorConstants
+{
+   public const int BaseEncumbrance = 100;
+   public const int EncumbranceModifierMultiplier = 20;
+}
+
 public static class ActorBaseExtensions
 {
    public static int GetBaseAbilityScore(this ActorBase actor, AbilityScoreType scoreType) => 
       actor.BaseAbilityScores[(int) scoreType];
+   public static void SetBaseAbilityScore(this ActorBase actor, AbilityScoreType scoreType, int score) =>
+      actor.BaseAbilityScores[(int)scoreType] = score;
+
+   public static int GetAbilityScoreModifier(this ActorBase actor, AbilityScoreType scoreType) =>
+      actor.BaseAbilityScores[(int)scoreType].GetAbilityModifier();
+
+   public static int GetMaxEncumbrance(this ActorBase actor) =>
+      ActorConstants.BaseEncumbrance + actor.GetAbilityScoreModifier(AbilityScoreType.Strength) * ActorConstants.EncumbranceModifierMultiplier;
 }
 
 public class TestActor : ActorBase
